@@ -41,6 +41,7 @@ html {}
 
 body {
 	font: 300 1em / 1.5em 'Merriweather Sans', sans-serif;
+	font-family: consolas,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 	color: $color-gray-40;
 }
 
@@ -71,7 +72,7 @@ a {
 }
 
 
-	
+
 h1, h2, h3, h4, h5, h6 {
 	text-rendering: optimizeLegibility;
 	color: $color-gray-15;
@@ -207,7 +208,7 @@ em, i {
 	font-weight: 400;
 	font-style: italic;
 	color: $color-gray-25;
-	
+
 	a {
 		font-weight: inherit;
 		font-style: inherit;
@@ -217,7 +218,7 @@ em, i {
 strong, b {
 	font-weight: 700;
 	color: $color-gray-25;
-	
+
 	a {
 		font-weight: inherit;
 		color: inherit;
@@ -612,7 +613,7 @@ body {
 			&:focus {
 				background: $color-gray-90;
 			}
-			
+
 			i:before {
 				margin: auto;
 			}
@@ -791,7 +792,7 @@ body {
 				&:focus {
 					background: $color-gray-90;
 				}
-				
+
 				i {
 					color: inherit;
 				}
@@ -810,17 +811,17 @@ body {
 					}
 				}
 			}
-			
+
 			&.menu-list-item-follow {
 				display: flex;
 				padding: 1em 0;
 				justify-content: space-around;
 				align-content: stretch;
-				
+
 				a {
 					flex: 1;
 					text-align: center;
-					
+
 					&:hover,
 					&:focus {
 						background: none;
@@ -1001,7 +1002,7 @@ body {
 				color: inherit;
 				text-decoration: none;
 				border-bottom: 1px solid transparent;
-				
+
 				&:hover,
 				&:focus {
 					border-bottom-color: $color-primary-default;
@@ -1041,7 +1042,7 @@ body {
 		padding: 4em 0;
 		background: no-repeat fixed center 100% / cover;
 		z-index: 1;
-		
+
 		@media only screen and (max-width: $breakpoint-tablet) {
 			background-attachment: scroll;
 		}
@@ -1055,7 +1056,7 @@ body {
 			top: 0;
 			background: rgba(0,0,0,0.2);
 		}
-		
+
 		&:after {
 			content: '';
 			position: absolute;
@@ -1153,7 +1154,7 @@ body {
 			color: $color-gray-40;
 			text-decoration: none;
 			border-bottom: 1px solid transparent;
-			
+
 			&:hover,
 			&:focus {
 				border-bottom-color: $color-primary-default;
@@ -1212,7 +1213,7 @@ body {
 
 	#post-index {
 		opacity: 0;
-	}	
+	}
 }
 
 @keyframes fade {
@@ -1306,7 +1307,7 @@ body {
 			.inner {
 				background: $color-gray-15;
 				color: $color-gray-65;
-				
+
 				&:after {
 					content: '';
 					position: absolute;
@@ -1525,7 +1526,7 @@ body {
 			&:focus {
 
 			}
-			
+
 			&:before {
 				margin: auto;
 			}
@@ -1556,11 +1557,11 @@ body {
 	margin: 4em 0;
 	padding: 2.5em;
 	background: #fff;
-	
+
 	@media only screen and (max-width: $breakpoint-phone) {
 		padding: 1em;
 	}
-	
+
 	.post-author-avatar {
 		display: block;
 		float: left;
@@ -1569,14 +1570,14 @@ body {
 		margin: 0;
 		border-radius: 12em;
 		overflow: hidden;
-		
+
 		@media only screen and (max-width: $breakpoint-phone) {
 			float: none;
 			width: 4em;
 			height: 4em;
 			margin-bottom: 1em;
 		}
-		
+
 		img {
 			display: block;
 			width: 100%;
@@ -1584,21 +1585,21 @@ body {
 			margin: 0;
 		}
 	}
-	
+
 	.post-author-bio {
 		padding-left: 8em;
-		
+
 		@media only screen and (max-width: $breakpoint-phone) {
 			padding-left: 0;
 		}
-		
+
 		.post-author-name {
 			margin-top: 0;
 			margin-bottom: 0;
 			font-weight: 800;
 			color: $color-gray-25;
 		}
-		
+
 		.post-author-about {
 			font-size: 0.75em;
 			line-height: 1.667em;
@@ -1606,11 +1607,11 @@ body {
 			padding-top: 1em;
 			border-top: 1px solid $color-gray-90;
 		}
-		
+
 		.post-author-meta {
 			margin-top: 0.571em;
 			margin-bottom: 0;
-			
+
 			span {
 				display: inline-block;
 				font-size: 0.875em;
@@ -1618,26 +1619,26 @@ body {
 				margin-right: 1.143em;
 				margin-bottom: 1.143em;
 				color: $color-gray-50;
-				
+
 				i {
 					color: $color-gray-65;
 				}
 			}
-		
+
 			.post-author-meta-location {
-				
+
 			}
-			
+
 			.post-author-meta-website {
-				
+
 			}
-			
+
 			.post-author-meta-twitter {
-				
+
 			}
-			
+
 			.post-author-meta-facebook {
-				
+
 			}
 		}
 	}
@@ -1653,7 +1654,7 @@ body {
 	border-radius: 2px;
 	padding: 1em;
 	border: 1px solid $color-gray-90;
-	
+
 	@media only screen and (max-width: $breakpoint-phone) {
 		padding: 0.5em;
 	}
@@ -1674,11 +1675,11 @@ body {
 	background: radial-gradient(circle, $color-gray-90 10%, transparent 10%), radial-gradient(circle, $color-gray-90 10%, transparent 10%) 0.5em 0.5em;
 	background-size: 1em 1em;
 	box-shadow: inset 0 0 0 0.75em $color-gray-97;
-	
+
 	@media only screen and (max-width: $breakpoint-phone) {
 		padding: 2em 0.5em 1em;
 	}
-	
+
 	p {
 		display: inline-block;
 		font-size: 0.75em;
@@ -1690,13 +1691,13 @@ body {
 		border-radius: 4px;
 		color: $color-gray-65;
 	}
-	
+
 	.post-subscribe-form {
 		position: relative;
 		display: block;
 		margin: 0 2em;
 		box-sizing: border-box;
-		
+
 		@media only screen and (max-width: $breakpoint-phone) {
 			margin: 1em;
 		}
@@ -1714,16 +1715,16 @@ body {
 			border-radius: 4px;
 			transition: all ease-out 0.2s;
 			box-shadow: 0 0 0 0.5em $color-gray-97;
-			
+
 			@media only screen and (max-width: $breakpoint-phone) {
 				height: 3em;
 				border-radius: 2px;
 			}
-			
+
 			&:hover {
 				border-color: $color-gray-85;
 			}
-			
+
 			&:focus {
 				border-color: $color-primary-default;
 			}
@@ -1737,7 +1738,7 @@ body {
 			display: inline-block;
 			height: 3em;
 			padding: 0 1em;
-			font-weight: 500; 
+			font-weight: 500;
 			color: #fff;
 			font-weight: 400;
 			background: $color-primary-default;
@@ -1748,14 +1749,14 @@ body {
 			box-sizing: border-box;
 			border-radius: 2px;
 			transition: all ease-out 0.2s;
-			
+
 			@media only screen and (max-width: $breakpoint-phone) {
 				position: relative;
 				width: 100%;
 				margin: 0.5em 0 0;
 			}
 
-			
+
 			&:hover,
 			&:focus {
 				background: $color-primary-active;
@@ -1903,7 +1904,7 @@ body {
 					@media only screen and (max-width: $breakpoint-phone) {
 						font-size: 1.5em;
 					}
-					
+
 					&:before {
 						margin: auto;
 					}
