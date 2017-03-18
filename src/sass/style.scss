@@ -827,6 +827,10 @@ body {
 						background: none;
 					}
 				}
+
+				&:before {
+					content: '';
+				}
 			}
 		}
 	}
