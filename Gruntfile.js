@@ -1,16 +1,16 @@
 module.exports = function(grunt) {
-    'use strict';
-    require('load-grunt-tasks')(grunt, {
-        pattern: ['grunt-*']
-    });
+	'use strict';
+	require('load-grunt-tasks')(grunt, {
+		pattern: ['grunt-*']
+	});
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        config: {
-            'cssSrcDir': 'src/sass',
-            'cssTargetDir': 'css',
-            'jsSrcDir': 'src/js',
-            'jsTargetDir': 'js',
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		config: {
+			'cssSrcDir': 'src/sass',
+			'cssTargetDir': 'css',
+			'jsSrcDir': 'src/js',
+			'jsTargetDir': 'js',
 			'jsDependencies': [
 				'bower_components/jquery/dist/jquery.min.js',
 				'bower_components/history.js/scripts/bundled/html4+html5/jquery.history.js',
@@ -26,47 +26,57 @@ module.exports = function(grunt) {
 				'bower_components/highlightjs/styles/default.css',
 				'bower_components/nprogress/nprogress.css'
 			]
-        },
-        copy: {
-	        dev: {
-                files: [{
-	                dest: 'assets/fonts/',
-	                src: '*',
-                    cwd: 'src/fonts/',
-                    expand: true
-                }]
-	        },
-	        dist: {
-                files: [{
-	                dest: 'assets/fonts/',
-	                src: '*',
-                    cwd: 'src/fonts/',
-                    expand: true
-                }]		        
-	        } 
-        },
-        clean: {
-            dist: ['assets']
-        },
-        sass: {
-            dev: {
-                options: {
-                    sourceMaps: true
-                },
-                files: {
-                    'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
-                }
-            },
-            dist: {
-                options: {
-                    outputStyle: 'compressed',
-                    sourceMaps: false
-                },
-                files: {
-                    'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
-                }
-            }
-        },
+		},
+		copy: {
+			dev: {
+				files: [{
+					dest: 'assets/fonts/',
+					src: '*',
+					cwd: 'src/fonts/',
+					expand: true
+				}, {
+					dest: 'assets/img/',
+					src: '*',
+					cwd: 'src/img/',
+					expand: true
+				}]
+			},
+			dist: {
+				files: [{
+					dest: 'assets/fonts/',
+					src: '*',
+					cwd: 'src/fonts/',
+					expand: true
+				}, {
+					dest: 'assets/img/',
+					src: '*',
+					cwd: 'src/img/',
+					expand: true
+				}]
+			}
+		},
+		clean: {
+			dist: ['assets']
+		},
+		sass: {
+			dev: {
+				options: {
+					sourceMaps: true
+				},
+				files: {
+					'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+				}
+			},
+			dist: {
+				options: {
+					outputStyle: 'compressed',
+					sourceMaps: false
+				},
+				files: {
+					'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+				}
+			}
+		},
 		cssmin: {
 			dev: {
 				options: {
@@ -93,17 +103,17 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-        postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer-core')({ browsers: ['last 2 versions'] })
-                ]
-            },
-            files: {
-            	src: 'assets/<%=  config.cssTargetDir %>/*.css'
-            }
-        },
+		postcss: {
+			options: {
+				map: true,
+				processors: [
+					require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+				]
+			},
+			files: {
+				src: 'assets/<%=  config.cssTargetDir %>/*.css'
+			}
+		},
 		uglify: {
 			dev: {
 				files: {
@@ -133,32 +143,32 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-        watch: {
-            css: {
-                files: '<%=  config.cssSrcDir %>/**/*.scss',
-                tasks: ['sass:dev','copy:dev','postcss']
-            },
-            js: {
-                files: '<%=  config.jsSrcDir %>/**/*.js',
-                tasks: ['uglify:devlight']
-            }
-        }
-    });
+		watch: {
+			css: {
+				files: '<%=  config.cssSrcDir %>/**/*.scss',
+				tasks: ['sass:dev','copy:dev','postcss']
+			},
+			js: {
+				files: '<%=  config.jsSrcDir %>/**/*.js',
+				tasks: ['uglify:devlight']
+			}
+		}
+	});
 
-    grunt.registerTask('build', [
-	    'clean:dist',
-        'sass:dist',
-        'cssmin:dist',
-        'postcss',
-        'copy:dist',
-        'uglify:dist'
-    ]);
-    grunt.registerTask('default', [
-        'sass:dev',
-        'cssmin:dev',
-        'postcss',
-        'copy:dev',
-        'uglify:dev',
-        'watch'
-    ]);
+	grunt.registerTask('build', [
+		'clean:dist',
+		'sass:dist',
+		'cssmin:dist',
+		'postcss',
+		'copy:dist',
+		'uglify:dist'
+	]);
+	grunt.registerTask('default', [
+		'sass:dev',
+		'cssmin:dev',
+		'postcss',
+		'copy:dev',
+		'uglify:dev',
+		'watch'
+	]);
 };
