@@ -43,6 +43,7 @@ body {
 	font: 300 1em / 1.5em 'Merriweather Sans', sans-serif;
 	font-family: consolas,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 	color: $color-gray-40;
+	overflow-x: hidden;
 }
 
 ::-moz-selection, ::selection {
