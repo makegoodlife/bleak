@@ -1,3 +1,4 @@
+
 {{!< default}}
 
 {{#post}}
@@ -15,17 +16,17 @@
 				<div class="clear"></div>
 				<h1 class="post-title">{{{title}}}</h1>
 			</header>
-		
+
 			<section class="post-content">
 				{{content}}
 			</section>
 
 			<footer class="post-footer">
-				
+
 				<div class="post-tags">
 					{{tags separator=" "}}
 				</div>
-				
+
 				<div class="post-share">
 					<a class="icon-twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 						<span>Twitter</span>
@@ -37,9 +38,10 @@
 						<span>Google+</span>
 					</a>
 				</div>
-				
+
 			</footer>
-			
+
+			<!--
 			{{#author}}
 			<aside class="post-author">
 				{{#if image}}
@@ -70,20 +72,20 @@
 				<div class="clear"></div>
 			</aside>
 			{{/author}}
-			
-            {{#if @labs.subscribers}}
-            <aside class="post-subscribe">
-	            <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
-            </aside>
-            {{/if}}
-			
+			-->
+			{{#if @labs.subscribers}}
+			<aside class="post-subscribe">
+				<p>Get the latest posts delivered right to your inbox.</p>
+				{{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+			</aside>
+			{{/if}}
+
 			<aside class="post-comments">
 				<div id="disqus_thread"></div>
 			</aside>
-			
+
 			</div>
-			
+
 			<nav class="post-nav">
 				{{#next_post}}
 					<a class="post-nav-item post-nav-next" href="{{url absolute="true"}}">
